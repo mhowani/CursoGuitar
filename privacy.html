@@ -5,37 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Política de privacidad — Guitarra Curso</title>
   <style>
+    :root {
+      --bg: #0c0e13;
+      --surface: #141821;
+      --text: #f5f7fa;
+      --muted: #9aa4b5;
+      --accent: #e07a3f;
+      --border: rgba(255, 255, 255, 0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-      background: #0f1115; color: #f3f5f8; line-height: 1.65;
-      max-width: 780px; margin: 0 auto; padding: 2.5rem 1.25rem;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(224, 122, 63, 0.12), transparent 42%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1.25rem 3.5rem;
     }
-    h1 { font-size: 2rem; margin-bottom: 1rem; }
-    h2 { font-size: 1.2rem; margin-top: 1.75rem; margin-bottom: 0.5rem; }
-    p { color: #b5bcc8; margin-bottom: 0.9rem; }
-    a { color: #e07a3f; text-decoration: none; }
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+    }
+    .back {
+      display: inline-block;
+      color: #ff9c63;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.75rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.45rem; }
+    p { color: #c4ccd9; margin-bottom: 0.85rem; }
   </style>
 </head>
 <body>
-  <p><a href="index.html">← Volver a Guitarra Curso</a></p>
-  <h1>Política de privacidad</h1>
-  <p>Última actualización: noviembre de 2026.</p>
+  <div class="wrap">
+    <a class="back" href="index.html">← Volver a Guitarra Curso</a>
+    <h1>Política de privacidad</h1>
+    <p class="meta">Aplicación: Guitarra Curso · Última actualización: noviembre de 2026</p>
 
-  <h2>1. Datos locales y privacidad</h2>
-  <p>
-    <strong>Guitarra Curso</strong> funciona de forma local en tu dispositivo. No requiere creación de cuentas de usuario
-    ni envía tus datos personales a servidores externos propios.
-  </p>
+    <h2>1. Funcionamiento local y privacidad</h2>
+    <p>
+      <strong>Guitarra Curso</strong> opera de manera local en el dispositivo del usuario. No exige crear cuentas de usuario
+      ni envía información personal a servidores propios externos.
+    </p>
 
-  <h2>2. Publicidad y analítica</h2>
-  <p>
-    La aplicación no muestra anuncios publicitarios de terceros ni realiza seguimiento invasivo de tu actividad.
-  </p>
+    <h2>2. Publicidad y rastreo</h2>
+    <p>
+      La aplicación no integra publicidad de terceros ni realiza seguimiento invasivo de tu actividad.
+    </p>
 
-  <h2>3. Contacto</h2>
-  <p>
-    Si tienes consultas sobre la aplicación o esta política, puedes ponerte en contacto con Rubén Morales a través de
-    los canales publicados en la ficha de la app.
-  </p>
+    <h2>3. Contacto</h2>
+    <p>
+      Para cualquier consulta relacionada con la aplicación o esta política de privacidad, puedes contactar con Rubén Morales.
+    </p>
+  </div>
 </body>
 </html>
