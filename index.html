@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guitarra Curso — Aprende guitarra en iPhone, iPad y Mac</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #181c24;
+      --text: #f3f5f8;
+      --muted: #a3abb8;
+      --accent: #e07a3f;
+      --border: #282e3a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 1rem;
+    }
+    .brand { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; font-size: 0.95rem; }
+    nav a:hover { color: var(--text); }
+    .hero { padding: 3.5rem 0 2.5rem; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1.15; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); font-size: 1.1rem; max-width: 650px; margin-bottom: 1.75rem; }
+    .badge {
+      display: inline-block; background: rgba(224, 122, 63, 0.15); color: var(--accent);
+      border: 1px solid rgba(224, 122, 63, 0.35); padding: 0.3rem 0.75rem;
+      border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.4rem;
+    }
+    .card h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    footer {
+      margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      color: var(--muted); font-size: 0.9rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">Guitarra Curso</div>
+      <nav>
+        <a href="#funciones">Funciones</a>
+        <a href="privacy.html">Privacidad</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="badge">iOS · iPadOS · macOS</span>
+      <h1>Biblioteca de acordes, herramientas y láminas para tu práctica diaria</h1>
+      <p>
+        Diseñada para estudiar guitarra sin distracciones: consulta acordes filtrados por estilo y categoría,
+        practica con herramientas y juegos integrados, y genera láminas A3 listas para imprimir.
+      </p>
+    </section>
+
+    <section id="funciones" class="grid">
+      <div class="card">
+        <h2>Acordes por estilo</h2>
+        <p>Explora posiciones y diagramas de mástil en Pop, Rock, Blues, Jazz, Clásica, Flamenco y Heavy Metal.</p>
+      </div>
+      <div class="card">
+        <h2>Herramientas y práctica</h2>
+        <p>Juegos y utilidades nativas pensadas para afianzar oído, lectura y constancia en el instrumento.</p>
+      </div>
+      <div class="card">
+        <h2>Láminas A3 y manual</h2>
+        <p>Guías de referencia, manual integrado y exportación/impresión de láminas directamente desde la app.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>Guitarra Curso · Desarrollado por Rubén Morales</div>
+      <div><a href="privacy.html">Política de privacidad</a></div>
+    </footer>
+  </div>
+</body>
+</html>
