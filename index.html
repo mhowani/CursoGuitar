@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guitarra Curso — Biblioteca de Acordes, Herramientas y Láminas A3</title>
+  <title>Guitarra Curso — App completa por 2,99 €</title>
   <style>
     :root {
-      --bg: #0c0e13;
-      --surface: #141821;
-      --surface-2: #1c222e;
-      --text: #f5f7fa;
-      --muted: #9aa4b5;
-      --accent: #e07a3f;
-      --accent-soft: rgba(224, 122, 63, 0.16);
-      --accent-border: rgba(224, 122, 63, 0.38);
-      --border: rgba(255, 255, 255, 0.09);
-      --wood-light: #e7c89b;
-      --wood-dark: #3b2618;
-      --string: #cfd6e0;
+      --bg: #f7f5f1;
+      --surface: #ffffff;
+      --surface-2: #f0ece4;
+      --text: #18191c;
+      --muted: #5d6472;
+      --accent: #c86428;
+      --accent-hover: #b2551d;
+      --accent-soft: rgba(200, 100, 40, 0.12);
+      --accent-border: rgba(200, 100, 40, 0.30);
+      --border: rgba(24, 25, 28, 0.09);
+      --wood-light: #e6c697;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,8 +24,8 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
       background:
-        radial-gradient(circle at 85% 0%, rgba(224, 122, 63, 0.14), transparent 42%),
-        radial-gradient(circle at 10% 15%, rgba(99, 132, 196, 0.09), transparent 38%),
+        radial-gradient(circle at 88% 0%, rgba(200, 100, 40, 0.11), transparent 42%),
+        radial-gradient(circle at 10% 10%, rgba(74, 111, 165, 0.06), transparent 38%),
         var(--bg);
       color: var(--text);
       line-height: 1.55;
@@ -46,7 +45,7 @@
       z-index: 20;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      background: rgba(20, 24, 33, 0.82);
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 0.85rem 1.25rem;
@@ -55,6 +54,7 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
+      box-shadow: 0 4px 18px rgba(24, 25, 28, 0.04);
     }
 
     .brand {
@@ -70,12 +70,12 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: linear-gradient(145deg, #f08d4f, #b85622);
+      background: linear-gradient(145deg, #de7736, #9d4918);
       display: grid;
       place-items: center;
       font-weight: 800;
       color: #fff;
-      box-shadow: 0 6px 18px rgba(224, 122, 63, 0.35);
+      box-shadow: 0 6px 14px rgba(200, 100, 40, 0.25);
     }
 
     nav {
@@ -88,6 +88,7 @@
     nav a {
       color: var(--muted);
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.2s ease;
     }
 
@@ -95,7 +96,7 @@
 
     /* Hero */
     .hero {
-      padding: 3rem 0 2rem;
+      padding: 2.8rem 0 2rem;
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
       gap: 1.5rem;
@@ -111,17 +112,17 @@
       align-items: center;
       gap: 0.45rem;
       background: var(--accent-soft);
-      color: #ff9c63;
+      color: var(--accent);
       border: 1px solid var(--accent-border);
       padding: 0.32rem 0.8rem;
       border-radius: 999px;
       font-size: 0.82rem;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 1rem;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 4.2vw, 3rem);
+      font-size: clamp(2rem, 4.2vw, 2.95rem);
       line-height: 1.12;
       letter-spacing: -0.03em;
       margin-bottom: 1rem;
@@ -129,7 +130,7 @@
 
     .hero p {
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 1.04rem;
       max-width: 580px;
       margin-bottom: 1.5rem;
     }
@@ -151,7 +152,7 @@
       text-decoration: none;
       border: 1px solid var(--border);
       cursor: pointer;
-      transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.15s ease, background 0.2s ease;
     }
 
     .btn:active { transform: scale(0.98); }
@@ -162,7 +163,7 @@
       border-color: transparent;
     }
 
-    .btn-primary:hover { background: #eb874c; }
+    .btn-primary:hover { background: var(--accent-hover); }
 
     .btn-secondary {
       background: var(--surface);
@@ -171,28 +172,47 @@
 
     .btn-secondary:hover { background: var(--surface-2); }
 
-    /* Tarjeta resumen en el héroe */
-    .status-panel {
+    /* Tarjeta de acceso completo / precio */
+    .plan-panel {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 1.35rem;
+      padding: 1.4rem;
+      box-shadow: 0 8px 24px rgba(24, 25, 28, 0.05);
       display: grid;
       gap: 0.9rem;
     }
 
-    .status-item {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 0.85rem 1rem;
+    .price-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .status-item span { color: var(--muted); font-size: 0.88rem; }
-    .status-item strong { font-size: 1rem; color: #ff9c63; }
+    .price-label { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+    .price-amount { font-size: 1.8rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+
+    .plan-list {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .plan-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .plan-list li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 800;
+    }
 
     /* Secciones */
     section.block { margin-top: 2.75rem; }
@@ -203,7 +223,7 @@
       align-items: flex-end;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
 
     .section-header h2 {
@@ -236,11 +256,11 @@
       transition: all 0.18s ease;
     }
 
-    .chip:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .chip:hover { color: var(--text); }
 
     .chip.active {
       background: var(--accent-soft);
-      color: #ff9c63;
+      color: var(--accent);
       border-color: var(--accent-border);
     }
 
@@ -259,6 +279,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
+      box-shadow: 0 4px 16px rgba(24, 25, 28, 0.03);
       transition: border-color 0.2s ease, transform 0.18s ease;
     }
 
@@ -304,22 +325,17 @@
     }
 
     .fretboard {
-      background: linear-gradient(180deg, #2a1b12 0%, #1d130d 100%);
+      background: linear-gradient(180deg, #4b3120 0%, #332014 100%);
       border-top: 4px solid var(--wood-light);
-      border-left: 1px solid rgba(255,255,255,0.08);
-      border-right: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
       border-radius: 8px;
       padding: 0.45rem 0.35rem;
-      position: relative;
     }
 
     .fret-row {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       height: 26px;
-      border-bottom: 1.5px solid rgba(231, 200, 155, 0.28);
-      position: relative;
+      border-bottom: 1.5px solid rgba(231, 200, 155, 0.32);
       align-items: center;
     }
 
@@ -338,21 +354,21 @@
       top: 0;
       bottom: 0;
       width: 1.5px;
-      background: rgba(215, 224, 235, 0.36);
+      background: rgba(245, 247, 250, 0.42);
     }
 
     .finger-dot {
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: var(--accent);
+      background: #e07a3f;
       color: #fff;
       font-size: 0.68rem;
       font-weight: 700;
       display: grid;
       place-items: center;
       z-index: 2;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     }
 
     .chord-tip {
@@ -372,6 +388,7 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 1.25rem;
+      box-shadow: 0 4px 16px rgba(24, 25, 28, 0.03);
     }
 
     .feature-card h3 {
@@ -418,31 +435,28 @@
 
     <section class="hero">
       <div>
-        <span class="badge">iOS · iPadOS · macOS · Afinación estándar E2–E4</span>
+        <span class="badge">iOS · iPadOS · macOS · App completa 2,99 €</span>
         <h1>Tu estudio de guitarra nativo, claro y sin distracciones</h1>
         <p>
           Consulta acordes por estilo musical con diagramas de 6 cuerdas, practica con herramientas y juegos
-          integrados, y genera láminas A3 listas para imprimir o guardar en PDF.
+          integrados, y desbloquea las láminas A3/PDF junto al resto de funciones completas por <strong>2,99 €</strong>.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#acordes">Explorar acordes</a>
-          <a class="btn btn-secondary" href="privacy.html">Política de privacidad</a>
+          <a class="btn btn-secondary" href="#funciones">Ver qué incluye</a>
         </div>
       </div>
 
-      <div class="status-panel">
-        <div class="status-item">
-          <span>Estilos en biblioteca</span>
-          <strong>7 estilos</strong>
+      <div class="plan-panel">
+        <div class="price-row">
+          <span class="price-label">App completa</span>
+          <span class="price-amount">2,99 €</span>
         </div>
-        <div class="status-item">
-          <span>Láminas de estudio</span>
-          <strong>Formato A3 / PDF</strong>
-        </div>
-        <div class="status-item">
-          <span>Enfoque de datos</span>
-          <strong>100% local</strong>
-        </div>
+        <ul class="plan-list">
+          <li>Láminas A3 listas para ver, imprimir o exportar en PDF</li>
+          <li>Biblioteca de acordes por estilo con mástil de 6 cuerdas</li>
+          <li>Herramientas, juegos de práctica y manual integrado</li>
+        </ul>
       </div>
     </section>
 
@@ -468,16 +482,16 @@
 
       <div class="features-grid">
         <div class="feature-card">
-          <h3>Diagramas de mástil de 6 cuerdas</h3>
-          <p>Visualización clara de cuerdas al aire, apagadas y trastes para estudiar digitaciones con precisión.</p>
+          <h3>Láminas A3 / PDF</h3>
+          <p>Consulta láminas de estudio en formato A3 y genéralas o imprímelas directamente desde la opción completa (2,99 €).</p>
         </div>
         <div class="feature-card">
-          <h3>Herramientas y juegos interactivos</h3>
-          <p>Utilidades y ejercicios integrados para entrenar el oído, el reconocimiento y la constancia.</p>
+          <h3>Acordes y herramientas</h3>
+          <p>Explora estilos, posiciones y utilidades interactivas para entrenar oído, ritmo y lectura.</p>
         </div>
         <div class="feature-card">
-          <h3>Láminas A3, manual y ayuda</h3>
-          <p>Láminas imprimibles/exportables en A3, manual de usuario y guía rápida disponibles en cualquier momento.</p>
+          <h3>Manual y privacidad local</h3>
+          <p>Guía de uso integrada dentro de la app, sin cuentas obligatorias ni seguimiento invasivo.</p>
         </div>
       </div>
     </section>
@@ -511,7 +525,7 @@
         name: "E5",
         subtitle: "Mi quinta · Power chord",
         styles: ["Rock", "Heavy Metal"],
-        frets: [0, 2, 2, null, nil = null, null],
+        frets: [0, 2, 2, null, null, null],
         tip: "Ideal para palm muting, riffs directos y ataque rítmico."
       },
       {
@@ -539,7 +553,7 @@
         name: "Am",
         subtitle: "La menor · Base clásica",
         styles: ["Clásica", "Flamenco", "Pop", "Rock"],
-        frets: [nil = null, 0, 2, 2, 1, 0],
+        frets: [null, 0, 2, 2, 1, 0],
         tip: "Muy versátil para arpegios p-i-m-a, rasgueos y estudios."
       },
       {
